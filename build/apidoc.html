@@ -8097,7 +8097,24 @@
     }
     return basePath + laterPath;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    benchmark: {
+        command: &#x27;node benchmark/index.js&#x27;
+    },
+    &#x22;sourcemap-test&#x22;: {
+        command: [
+            &#x27;node bin/lessc --source-map=test/sourcemaps/maps/import-map.map test/less/import.less test/sourcemaps/import.css
+&#x27;,
+            &#x27;node bin/lessc --source-map test/less/sourcemaps/basic.less test/sourcemaps/basic.css&#x27;
+        ].<span class="apidocCodeKeywordSpan">join</span>(&#x27;&#x26;&#x26;&#x27;)
+    }
+},
+
+browserify: {
+    browser: {
+        src: [&#x27;./lib/less-browser/bootstrap.js&#x27;],
+        options: {
+...</pre></li>
     </ul>
 
 
@@ -8581,7 +8598,22 @@
         promise.then(loadFileCallback, fileParsedFunc);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    &#x27;shell:test&#x27;,
+    &#x27;browsertest&#x27;
+];
+
+if (isNaN(Number(process.env.TRAVIS_PULL_REQUEST, 10)) &#x26;&#x26;
+    Number(process.env.TRAVIS_NODE_VERSION) === 0.11 &#x26;&#x26;
+    (process.env.TRAVIS_BRANCH === &#x22;master&#x22; || process.env.TRAVIS_BRANCH === &#x22;sauce&#x22;)) {
+    testTasks.<span class="apidocCodeKeywordSpan">push</span>(&#x22;force:on&#x22;);
+    testTasks.push(&#x22;sauce-after-setup&#x22;);
+    testTasks.push(&#x22;force:off&#x22;);
+}
+
+// Run all tests
+grunt.registerTask(&#x27;test&#x27;, testTasks);
+...</pre></li>
     </ul>
 
 
@@ -18178,7 +18210,26 @@
         this.denominator[i] = callback(this.denominator[i], true);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+&#x27;saucelabs-jasmine&#x27;: {
+    all: {
+        options: {
+            urls: [&#x22;filemanager-plugin&#x22;,&#x22;visitor-plugin&#x22;,&#x22;pre-processor-plugin&#x22;,&#x22;post-processor
+-plugin&#x22;,&#x22;post-processor&#x22;, &#x22;global-vars&#x22;, &#x22;modify-vars&#x22;, &#x22;production&#x22;, &#x22;rootpath
+-relative&#x22;,
+                   &#x22;rootpath&#x22;, &#x22;relative-urls&#x22;, &#x22;browser&#x22;, &#x22;no-js-errors&#x22;, &#x22;legacy&#
+x22;, &#x22;strict-units&#x22;
+            ].<span class="apidocCodeKeywordSpan">map</span>(function(testName) {
+                return &#x22;http://localhost:8081/tmp/browser/test-runner-&#x22; + testName + &#x22;.html&#x22;;
+            }),
+            testname: &#x27;Sauce Unit Test for less.js&#x27;,
+            browsers: [{
+                browserName: &#x22;chrome&#x22;,
+                version: &#x27;&#x27;,
+                platform: &#x27;Windows 8&#x27;
+...</pre></li>
     </ul>
 
 
