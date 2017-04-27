@@ -1,6 +1,6 @@
 # npmdoc-less
 
-#### api documentation for  [less (v2.7.2)](http://lesscss.org)  [![npm package](https://img.shields.io/npm/v/npmdoc-less.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-less) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-less.svg)](https://travis-ci.org/npmdoc/node-npmdoc-less)
+#### basic api documentation for  [less (v2.7.2)](http://lesscss.org)  [![npm package](https://img.shields.io/npm/v/npmdoc-less.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-less) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-less.svg)](https://travis-ci.org/npmdoc/node-npmdoc-less)
 
 #### Leaner CSS
 
